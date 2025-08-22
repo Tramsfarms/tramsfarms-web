@@ -1,0 +1,44 @@
+name: SSH Deploy
+
+on:
+  push:
+    branches:
+      - maixk # Deploy only when pushing to the main
+
+jobs:
+  ssh-deploy:
+    name: Deploy to Server via SSH
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22" # Specify the Node.js version
+
+      - name: Deploy via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no faithstr@faithstream.com.ng << 'EOF'
+            source /home/faithstr/nodevenv/ghomes/19/bin/activate && cd /home/faithstr/ghomes
+            if [ ! -d .git ]; then
+              git clone https://github.com/SmartFarmss/tramsfarms-frontend.git .
+            else
+              git pull origin main
+            fi
+            #cp .env.production .env
+            npm install
+            npm run build
+            #npm i -g pm2
+            pm2 delete all || true  # Remove any existing PM2 process
+            pm2 start npm --name "transfarms-web" -- run start --watch  # Start the app with pm2
+            pm2 save  # Save the PM2 process list to respawn on reboot
+            pm2 list  # Optional: Check the list of running processes
+          EOF

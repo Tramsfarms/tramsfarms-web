@@ -1,0 +1,62 @@
+name: SSH Deploy
+
+on:
+  push:
+    branches:
+      - main # Deploy only when pushing to the main branch
+
+jobs:
+  ssh-deploy:
+    name: Deploy to Server via SSH
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22" # Specify the Node.js version
+
+      - name: Deploy via SSH
+        run: |
+          ssh -o StrictHostKeyChecking=no root@195.35.3.200 << 'EOF'
+            # sudo su
+            # ls /
+            cd /home/tramsfarms/htdocs/tramsfarms.com
+            if [ ! -d .git ]; then
+              git clone https://github.com/Arome8240/tramsfarms.git .
+            else
+              git pull origin main
+            fi
+            #cp .env.production .env
+            #npm install
+
+             # Load NVM and set Node version
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            nvm use 22 # Change 18 to your version
+
+            yarn
+            #npm run build
+            yarn build
+            # Ensure pm2 is installed, if not install it
+            if ! command -v pm2 &> /dev/null; then
+              npm install -g pm2
+            fi
+            pm2 delete all || true  # Remove any existing PM2 process
+            pm2 start npm --name "transfarms-web" -- run start --watch  # Start the app with pm2
+            pm2 save  # Save the PM2 process list to respawn on reboot
+            pm2 list  # Optional: Check the list of running processes...
+          EOF

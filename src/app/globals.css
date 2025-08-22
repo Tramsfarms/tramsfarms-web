@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+html,
+body,
+#root {
+  margin: unset;
+  padding: unset;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+
+  .str-chat__channel-list {
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 0;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+
+    &--open {
+      width: 30%;
+      position: fixed;
+    }
+    transition: width 0.3s ease-out;
+  }
+
+  .str-chat__channel {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .str-chat__main-panel {
+    min-width: 0;
+    flex: 1;
+
+    &--thread-open {
+      display: none;
+    }
+  }
+
+  .str-chat__thread {
+    flex: 1;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .str-chat__channel-header .str-chat__header-hamburger {
+    width: 30px;
+    height: 38px;
+    padding: var(--xxs-p);
+    margin-right: var(--xs-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    &:hover {
+      svg path {
+        fill: var(--primary-color);
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .str-chat__channel-list {
+      width: 30%;
+      position: initial;
+      z-index: 0;
+    }
+
+    .str-chat__thread {
+      position: initial;
+      z-index: 0;
+    }
+
+    .str-chat__channel-header .str-chat__header-hamburger {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .str-chat__main-panel {
+      min-width: 0;
+
+      &--thread-open {
+        max-width: 55%;
+        display: flex;
+      }
+    }
+
+    .str-chat__thread {
+      max-width: 45%;
+    }
+
+    .str-chat__channel-header .str-chat__header-hamburger {
+      display: none;
+    }
+  }
+}
+
+/* CSS for mobile responsiveness */
+.ag-pagination {
+  display: flex;
+  justify-content: center; /* Center align pagination */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  padding: 10px; /* Add some padding */
+}
+
+/* Adjust the button styles */
+.ag-pagination .ag-paging-button {
+  margin: 0 5px; /* Add margin for spacing */
+  padding: 8px 12px; /* Adjust padding for better touch targets */
+  font-size: 14px; /* Font size for better readability */
+}
+
+/* Hide unnecessary elements on mobile */
+@media (max-width: 768px) {
+  .ag-pagination .ag-paging-button {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Custom CSS for date input calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(57%) sepia(6%) saturate(105%) hue-rotate(168deg)
+    brightness(92%) contrast(84%);
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
