@@ -180,7 +180,7 @@ export default function Home() {
   return (
     <div className='w-screen h-screen overflow-x-hidden bg-white'>
       <Header />
-      <div className='max-w-full lg:-mt-10 p-3 rounded-lg h-52 sm:h-[400px] lg:p-14'>
+      <div className='max-w-full  lg:-mt-10 p-3 rounded-lg h-52 sm:h-[400px] lg:p-14'>
         <Carousel autoSlide={true}>
           {slides.map((slide, index) => (
             <div
@@ -214,13 +214,13 @@ export default function Home() {
       <Suspense
         fallback={<div className='p-5'>Loading Recommended products...</div>}
       >
-        <div className='max-w-full p-3  lg:-mt-5 lg:p-0 '>
-          <div className='flex  items-center justify-between lg:px-10'>
+        <div className='max-w-full p-3  lg:-mt-8  lg:p-0 '>
+          <div className='flex  items-center justify-between lg:container '>
             <h1 className='text-lg font-bold text-grays-900 px-3 md:text-2xl'>
               Recommended
             </h1>
           </div>
-          <div className='grid max-w-full lg:-mt-4 grid-cols-2 gap-2 lg:p-14 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'>
+          <div className='grid max-w-full lg:-mt-4 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'>
             {isRecommendedLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
@@ -266,7 +266,7 @@ export default function Home() {
       <Suspense
         fallback={<div className='p-5'>Loading All Categories products...</div>}
       >
-        <div className='max-w-full p-3 lg:p-14'>
+        <div className='max-w-full p-3 lg:-mt-6 lg:p-14'>
           <div className='flex items-center lg:-mt-14 justify-between '>
             <h1 className='text-lg font-bold text-grays-900 md:text-2xl'>
               All Categories
@@ -278,7 +278,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className='grid max-w-full grid-cols-2 gap-2 mt-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+          <div className='grid max-w-full grid-cols-2 lg:-mt-4 gap-2 mt-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
             {isAllProductsLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />

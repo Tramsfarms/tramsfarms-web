@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import Cookies from "js-cookie";
-import { toast } from "react-toastify";
-import { ArrowLeft, Loader2 } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
+import { ArrowLeft, Loader2 } from 'lucide-react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Card,
   CardContent,
@@ -18,11 +18,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import constant from "@/utils/constant";
+} from '@/components/ui/card';
+import constant from '@/utils/constant';
 
 export default function ForgotPasswordPage() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -33,7 +33,7 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
 
     if (!email) {
-      toast.error("Please enter your email address");
+      toast.error('Please enter your email address');
       return;
     }
 
@@ -41,8 +41,8 @@ export default function ForgotPasswordPage() {
 
     try {
       const myHeaders = {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       };
 
       const data = {
@@ -54,9 +54,9 @@ export default function ForgotPasswordPage() {
       });
 
       if (response.status === 200) {
-        Cookies.set("email", email);
-        toast.success(response.data.message || "Reset link sent to your email");
-        router.push("/forgot-password/verify");
+        Cookies.set('email', email);
+        toast.success(response.data.message || 'Reset link sent to your email');
+        router.push('/forgot-password/verify');
       }
     } catch (error) {
       if (error.response?.data?.errors) {
@@ -68,7 +68,7 @@ export default function ForgotPasswordPage() {
       } else if (error.response?.data?.message) {
         toast.error(error.response.data.message);
       } else {
-        toast.error("Failed to send password reset link. Please try again.");
+        toast.error('Failed to send password reset link. Please try again.');
       }
     } finally {
       setIsLoading(false);
@@ -76,11 +76,19 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-12 bg-muted/30">
-      <div className="w-full max-w-lg space-y-8">
-        <Card className="shadow-md border-muted/60">
-          <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl font-bold">
+    <div className='flex items-center justify-center min-h-screen px-4 py-12 bg-muted/30'>
+      <div className='w-full max-w-lg space-y-8'>
+        <div className='flex justify-center'>
+          <Image
+            src='/images/logo/BWT.svg'
+            alt='Tramsfarms Logo'
+            width={200}
+            height={200}
+          />
+        </div>
+        <Card className='shadow-md border-muted/60'>
+          <CardHeader className='space-y-1 text-center'>
+            <CardTitle className='text-2xl font-bold'>
               Forgot Password?
             </CardTitle>
             <CardDescription>
@@ -88,13 +96,13 @@ export default function ForgotPasswordPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+            <form onSubmit={handleSubmit} className='space-y-4'>
+              <div className='space-y-2'>
+                <Label htmlFor='email'>Email</Label>
                 <Input
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
+                  id='email'
+                  type='email'
+                  placeholder='name@example.com'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -102,39 +110,31 @@ export default function ForgotPasswordPage() {
               </div>
 
               <Button
-                variant={"primary"}
-                type="submit"
-                className="w-full"
+                variant={'primary'}
+                type='submit'
+                className='w-full'
                 disabled={isLoading}
               >
                 {isLoading ? (
                   <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    <Loader2 className='w-4 h-4 mr-2 animate-spin' />
                     Sending...
                   </>
                 ) : (
-                  "Reset Password"
+                  'Reset Password'
                 )}
               </Button>
             </form>
           </CardContent>
-          <CardFooter className="flex justify-center">
-            <Button variant="link" asChild>
-              <Link href="/login">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+          <CardFooter className='flex justify-center'>
+            <Button variant='link' asChild>
+              <Link href='/login'>
+                <ArrowLeft className='w-4 h-4 mr-2' />
                 Back to login
               </Link>
             </Button>
           </CardFooter>
         </Card>
-
-        <div className="flex justify-center">
-          <img
-            src="/images/logo/BWT.svg"
-            alt="Tramsfarms Logo"
-            className="h-10"
-          />
-        </div>
       </div>
     </div>
   );

@@ -194,7 +194,7 @@ export default function Header() {
   return (
     <>
       {/* Desktop Header */}
-      <div className="flex-col items-center justify-between hidden w-screen p-2 lg:px-10 space-x-8 md:flex md:flex-row">
+      <div className="flex-col lg:container items-center py-2 justify-between hidden w-screen  space-x-8 md:flex md:flex-row">
         <Link href={"/"}>
           <img
             src="/images/logo/BWT.svg"
@@ -202,7 +202,6 @@ export default function Header() {
             alt="Tramsfarms Logo"
           />
         </Link>
-
         <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row items-center p-2 w-full md:w-[610px] space-x-3">
           <div className="relative w-full" ref={searchRef}>
             <Input
@@ -277,7 +276,6 @@ export default function Header() {
             </Link>
           </div>
         </div>
-
         <div>
           {isVendor ? (
             <div className="flex items-center gap-4">
@@ -411,8 +409,8 @@ export default function Header() {
       </div>
 
       {/* Desktop Categories */}
-      <div className=" lg:justify-center w-full bg-white  lg:mx-auto border border-r-0 py-2 hidden md:flex  ">
-        <div className="flex p-3   lg:gap-12">
+      <div className=" lg:justify-center w-full bg-white  lg:mx-auto border border-r-0 py-3 hidden md:flex  ">
+        <div className="flex   lg:gap-12">
           {categories.map((category, index) => (
             <Link
               href={category.link}
