@@ -194,7 +194,7 @@ export default function Header() {
   return (
     <>
       {/* Desktop Header */}
-      <div className="flex-col items-center justify-between hidden w-screen p-2 px-10 space-x-8 md:flex md:flex-row">
+      <div className="flex-col items-center justify-between hidden w-screen p-2 lg:px-10 space-x-8 md:flex md:flex-row">
         <Link href={"/"}>
           <img
             src="/images/logo/BWT.svg"
@@ -266,12 +266,10 @@ export default function Header() {
               </Card>
             )}
           </div>
-
           <div className="flex space-x-2">
             <Button className="text-gray-500 border-gray-500" variant="outline">
               Search
             </Button>
-
             <Link href={isVendor ? "/vendors" : "/vendors/register"}>
               <Button className="text-white" variant="primary">
                 Sell on Tramsfarms
@@ -326,18 +324,16 @@ export default function Header() {
                       notifications.map((notification) => (
                         <DropdownMenuItem
                           key={notification.id}
-                          className={`p-4 border-b cursor-default ${
-                            !notification.read ? "bg-muted/50" : ""
-                          }`}
+                          className={`p-4 border-b cursor-default ${!notification.read ? "bg-muted/50" : ""
+                            }`}
                           onSelect={() => markAsRead(notification.id)}
                         >
                           <div className="flex items-start gap-2">
                             <div
-                              className={`w-2 h-2 mt-1.5 rounded-full ${
-                                !notification.read
-                                  ? "bg-primary"
-                                  : "bg-transparent"
-                              }`}
+                              className={`w-2 h-2 mt-1.5 rounded-full ${!notification.read
+                                ? "bg-primary"
+                                : "bg-transparent"
+                                }`}
                             />
                             <div className="flex-1">
                               <p className="text-sm">{notification.message}</p>
@@ -395,7 +391,7 @@ export default function Header() {
               </DropdownMenu>
             </div>
           ) : (
-            <div className="flex mr-20 space-x-2">
+            <div className="flex mr-10 space-x-2">
               <Link href="/login">
                 <Button
                   className="text-primary border-primary"
@@ -415,18 +411,17 @@ export default function Header() {
       </div>
 
       {/* Desktop Categories */}
-      <div className="justify-center hidden md:flex border-y">
-        <div className="flex p-3 space-x-8">
+      <div className=" lg:justify-center w-full bg-white  lg:mx-auto border border-r-0 py-2 hidden md:flex  ">
+        <div className="flex p-3   lg:gap-12">
           {categories.map((category, index) => (
             <Link
               href={category.link}
               key={index}
               onClick={() => setSelectedCategory(index)}
-              className={`${
-                path == category.link
-                  ? "text-primary underline underline-offset-8"
-                  : "text-black"
-              }`}
+              className={`${path == category.link
+                ? "text-primary underline underline-offset-8"
+                : "text-black"
+                }`}
             >
               {category.name}
             </Link>
@@ -456,11 +451,10 @@ export default function Header() {
                         <SheetClose asChild key={index}>
                           <Link
                             href={category.link}
-                            className={`block p-2 rounded-md ${
-                              path == category.link
-                                ? "bg-primary/10 text-primary"
-                                : "hover:bg-muted"
-                            }`}
+                            className={`block p-2 rounded-md ${path == category.link
+                              ? "bg-primary/10 text-primary"
+                              : "hover:bg-muted"
+                              }`}
                           >
                             {category.name}
                           </Link>
@@ -564,18 +558,16 @@ export default function Header() {
                         notifications.map((notification) => (
                           <DropdownMenuItem
                             key={notification.id}
-                            className={`p-4 border-b cursor-default ${
-                              !notification.read ? "bg-muted/50" : ""
-                            }`}
+                            className={`p-4 border-b cursor-default ${!notification.read ? "bg-muted/50" : ""
+                              }`}
                             onSelect={() => markAsRead(notification.id)}
                           >
                             <div className="flex items-start gap-2">
                               <div
-                                className={`w-2 h-2 mt-1.5 rounded-full ${
-                                  !notification.read
-                                    ? "bg-primary"
-                                    : "bg-transparent"
-                                }`}
+                                className={`w-2 h-2 mt-1.5 rounded-full ${!notification.read
+                                  ? "bg-primary"
+                                  : "bg-transparent"
+                                  }`}
                               />
                               <div className="flex-1">
                                 <p className="text-sm">
@@ -756,11 +748,10 @@ export default function Header() {
                 href={category.link}
                 key={index}
                 onClick={() => setSelectedCategory(index)}
-                className={`${
-                  path == category.link
-                    ? "text-primary underline underline-offset-8"
-                    : "text-black"
-                } w-auto whitespace-nowrap`}
+                className={`${path == category.link
+                  ? "text-primary underline underline-offset-8"
+                  : "text-black"
+                  } w-auto whitespace-nowrap`}
               >
                 {category.name}
               </Link>
