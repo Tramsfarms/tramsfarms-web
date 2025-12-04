@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useMemo, useCallback } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import Cookies from "js-cookie";
-import { toast } from "react-toastify";
-import { format } from "date-fns";
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
+import { format } from 'date-fns';
 import {
   type ColumnDef,
   type ColumnFiltersState,
@@ -18,7 +18,7 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table";
+} from '@tanstack/react-table';
 import {
   Search,
   PlusSquare,
@@ -27,17 +27,17 @@ import {
   MoreHorizontal,
   ArrowUpDown,
   Filter,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 import {
   Table,
   TableBody,
@@ -45,8 +45,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+} from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -57,7 +57,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from '@/components/ui/alert-dialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -65,15 +65,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import constants from "@/utils/constant";
+} from '@/components/ui/select';
+import constants from '@/utils/constant';
 
 interface Product {
   id: string;
@@ -96,43 +96,43 @@ export default function ProductsPage() {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const router = useRouter();
   const { API_URL } = constants;
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState('all');
 
   // Define columns for TanStack Table
   const columns: ColumnDef<Product>[] = useMemo(
     () => [
       {
-        accessorKey: "name",
+        accessorKey: 'name',
         header: ({ column }) => {
           return (
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               Product Name
-              <ArrowUpDown className="w-4 h-4 ml-2" />
+              <ArrowUpDown className='w-4 h-4 ml-2' />
             </Button>
           );
         },
         cell: ({ row }) => (
-          <div className="font-medium">{row.getValue("name")}</div>
+          <div className='font-medium'>{row.getValue('name')}</div>
         ),
       },
       {
-        accessorKey: "category.name",
+        accessorKey: 'category.name',
         header: ({ column }) => {
           return (
-            <div className="flex items-center space-x-2">
+            <div className='flex items-center space-x-2'>
               <Button
-                variant="ghost"
+                variant='ghost'
                 onClick={() =>
-                  column.toggleSorting(column.getIsSorted() === "asc")
+                  column.toggleSorting(column.getIsSorted() === 'asc')
                 }
               >
                 Category
-                <ArrowUpDown className="w-4 h-4 ml-2" />
+                <ArrowUpDown className='w-4 h-4 ml-2' />
               </Button>
               {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -164,52 +164,52 @@ export default function ProductsPage() {
             </div>
           );
         },
-        cell: ({ row }) => row.original.category?.name || "Uncategorized",
+        cell: ({ row }) => row.original.category?.name || 'Uncategorized',
       },
       {
-        accessorKey: "sale_price",
+        accessorKey: 'sale_price',
         header: ({ column }) => {
           return (
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               Sale Price
-              <ArrowUpDown className="w-4 h-4 ml-2" />
+              <ArrowUpDown className='w-4 h-4 ml-2' />
             </Button>
           );
         },
         cell: ({ row }) => {
-          const price = parseFloat(row.getValue("sale_price"));
-          return new Intl.NumberFormat("en-NG", {
-            style: "currency",
-            currency: "NGN",
+          const price = parseFloat(row.getValue('sale_price'));
+          return new Intl.NumberFormat('en-NG', {
+            style: 'currency',
+            currency: 'NGN',
           }).format(price);
         },
       },
       {
-        accessorKey: "created_at",
+        accessorKey: 'created_at',
         header: ({ column }) => {
           return (
             <Button
-              variant="ghost"
+              variant='ghost'
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               Date
-              <ArrowUpDown className="w-4 h-4 ml-2" />
+              <ArrowUpDown className='w-4 h-4 ml-2' />
             </Button>
           );
         },
         cell: ({ row }) => {
-          return format(new Date(row.getValue("created_at")), "MMM d, yyyy");
+          return format(new Date(row.getValue('created_at')), 'MMM d, yyyy');
         },
       },
       {
-        id: "actions",
+        id: 'actions',
         cell: ({ row }) => {
           const product = row.original;
 
@@ -219,10 +219,10 @@ export default function ProductsPage() {
 
           const handleDelete = async () => {
             try {
-              const token = Cookies.get("vendors_auth_token");
+              const token = Cookies.get('vendors_auth_token');
               const myHeader = {
-                "Content-Type": "application/json",
-                Accept: "application/json",
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
                 Authorization: `Bearer ${token}`,
               };
               const response = await axios.delete(
@@ -231,28 +231,28 @@ export default function ProductsPage() {
               );
 
               if (response.status === 200) {
-                toast.success("Product deleted successfully");
+                toast.success('Product deleted successfully');
                 // Filter out the deleted product from the array
                 setProducts((prevProducts) =>
                   prevProducts.filter((p) => p.id !== product.id)
                 );
               }
             } catch (error) {
-              toast.error("Failed to delete product");
+              toast.error('Failed to delete product');
             }
           };
 
           return (
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" onClick={handleEdit}>
-                <Edit className="w-4 h-4 text-blue-500" />
-                <span className="sr-only">Edit</span>
+            <div className='flex items-center gap-2'>
+              <Button variant='ghost' size='icon' onClick={handleEdit}>
+                <Edit className='w-4 h-4 text-blue-500' />
+                <span className='sr-only'>Edit</span>
               </Button>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Trash2 className="w-4 h-4 text-red-500" />
-                    <span className="sr-only">Delete</span>
+                  <Button variant='ghost' size='icon'>
+                    <Trash2 className='w-4 h-4 text-red-500' />
+                    <span className='sr-only'>Delete</span>
                   </Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent>
@@ -269,7 +269,7 @@ export default function ProductsPage() {
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <AlertDialogAction
                       onClick={handleDelete}
-                      className="bg-red-500 hover:bg-red-600"
+                      className='bg-red-500 hover:bg-red-600'
                     >
                       Delete
                     </AlertDialogAction>
@@ -302,10 +302,10 @@ export default function ProductsPage() {
   const getProducts = useCallback(async () => {
     setIsLoading(true);
     try {
-      const token = Cookies.get("vendors_auth_token");
+      const token = Cookies.get('vendors_auth_token');
       const myHeader = {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
         Authorization: `Bearer ${token}`,
       };
       const response = await axios.get(`${API_URL}my-products`, {
@@ -330,7 +330,7 @@ export default function ProductsPage() {
 
       setCategories(uniqueCategories);
     } catch (error) {
-      toast.error("Failed to fetch products");
+      toast.error('Failed to fetch products');
     } finally {
       setIsLoading(false);
     }
@@ -341,15 +341,15 @@ export default function ProductsPage() {
   }, [getProducts]);
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="flex items-center justify-between">
+    <div className='p-6 space-y-6'>
+      <div className='flex items-center justify-between'>
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Products</h1>
-          <p className="text-muted-foreground">Manage your product listings</p>
+          <h1 className='text-2xl font-bold tracking-tight'>Products</h1>
+          <p className='text-muted-foreground'>Manage your product listings</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-3">
+      <div className='grid grid-cols-1 gap-4 mb-8 md:grid-cols-2'>
         <Card>
           <CardHeader>
             <CardTitle>Add Single Product</CardTitle>
@@ -358,9 +358,9 @@ export default function ProductsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/vendors/products/add">
-              <Button variant={"primary"} className="w-full">
-                <PlusSquare className="w-4 h-4 mr-2" />
+            <Link href='/vendors/products/add'>
+              <Button variant={'primary'} className='w-full'>
+                <PlusSquare className='w-4 h-4 mr-2' />
                 Add Product
               </Button>
             </Link>
@@ -377,10 +377,10 @@ export default function ProductsPage() {
           <CardContent>
             <Select value={category} onValueChange={setCategory}>
               <SelectTrigger>
-                <SelectValue placeholder="Select Category" />
+                <SelectValue placeholder='Select Category' />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value='all'>All Categories</SelectItem>
                 {categories?.map((category) => (
                   <SelectItem key={category.id} value={category.id.toString()}>
                     {category.name}
@@ -392,26 +392,26 @@ export default function ProductsPage() {
         </Card>
       </div>
 
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="relative w-64">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+      <div className='space-y-4'>
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center gap-2'>
+            <div className='relative w-64'>
+              <Search className='absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground' />
               <Input
-                placeholder="Search products..."
+                placeholder='Search products...'
                 value={
-                  (table.getColumn("name")?.getFilterValue() as string) ?? ""
+                  (table.getColumn('name')?.getFilterValue() as string) ?? ''
                 }
                 onChange={(event) =>
-                  table.getColumn("name")?.setFilterValue(event.target.value)
+                  table.getColumn('name')?.setFilterValue(event.target.value)
                 }
-                className="pl-8"
+                className='pl-8'
               />
             </div>
           </div>
         </div>
 
-        <div className="border rounded-md">
+        <div className='border rounded-md'>
           <Table>
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -434,7 +434,7 @@ export default function ProductsPage() {
                 <TableRow>
                   <TableCell
                     colSpan={columns.length}
-                    className="h-24 text-center"
+                    className='h-24 text-center'
                   >
                     Loading...
                   </TableCell>
@@ -443,7 +443,7 @@ export default function ProductsPage() {
                 table.getRowModel().rows.map((row) => (
                   <TableRow
                     key={row.id}
-                    data-state={row.getIsSelected() && "selected"}
+                    data-state={row.getIsSelected() && 'selected'}
                   >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id}>
@@ -459,7 +459,7 @@ export default function ProductsPage() {
                 <TableRow>
                   <TableCell
                     colSpan={columns.length}
-                    className="h-24 text-center"
+                    className='h-24 text-center'
                   >
                     No products found.
                   </TableCell>
@@ -469,18 +469,18 @@ export default function ProductsPage() {
           </Table>
         </div>
 
-        <div className="flex items-center justify-end py-4 space-x-2">
+        <div className='flex items-center justify-end py-4 space-x-2'>
           <Button
-            variant="outline"
-            size="sm"
+            variant='outline'
+            size='sm'
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
           </Button>
           <Button
-            variant="outline"
-            size="sm"
+            variant='outline'
+            size='sm'
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
