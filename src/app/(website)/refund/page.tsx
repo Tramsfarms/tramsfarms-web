@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import {
   ChevronRight,
   RotateCcw,
@@ -9,57 +9,57 @@ import {
   HelpCircle,
   FileText,
   DollarSign,
-} from "lucide-react";
-import Link from "next/link";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+} from 'lucide-react';
+import Link from 'next/link';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: "Return & Refund Policy | Tramsfarms Marketplace",
+  title: 'Return & Refund Policy | Tramsfarms Marketplace',
   description:
-    "Learn about our return and refund policies for products purchased on Tramsfarms Marketplace.",
+    'Learn about our return and refund policies for products purchased on Tramsfarms Marketplace.',
 };
 
 const ReturnPolicyPage = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen bg-background">
+      <div className='min-h-screen bg-background'>
         {/* Header */}
 
-        <div className="py-12 bg-primary/10">
-          <div className="container px-4 mx-auto">
-            <div className="flex items-center mb-4 text-sm text-gray-600">
-              <Link href="/" className="transition-colors hover:text-primary">
+        <div className='py-12 bg-primary'>
+          <div className='container px-4 mx-auto'>
+            <div className='flex items-center mb-4 text-sm text-white'>
+              <Link href='/' className='transition-colors hover:text-primary'>
                 Home
               </Link>
-              <ChevronRight className="w-4 h-4 mx-2" />
-              <span className="font-medium text-gray-800">
+              <ChevronRight className='w-4 h-4 mx-2 text-white' />
+              <span className='font-medium text-white'>
                 Return & Refund Policy
               </span>
             </div>
-            <h1 className="flex items-center text-4xl font-bold text-gray-900">
-              <RotateCcw className="w-8 h-8 mr-3 text-primary" />
+            <h1 className='flex items-center text-4xl font-bold text-white'>
+              <RotateCcw className='w-8 h-8 mr-3 text-white' />
               Return & Refund Policy
             </h1>
-            <p className="max-w-3xl mt-4 text-gray-600">
+            <p className='max-w-3xl mt-4 text-white'>
               Last updated: March 10, 2025
             </p>
           </div>
         </div>
 
         {/* Content */}
-        <div className="container px-4 py-12 mx-auto">
-          <div className="max-w-4xl mx-auto overflow-hidden bg-white shadow-sm rounded-xl">
-            <div className="p-8">
-              <div className="prose max-w-none">
-                <div className="p-4 mb-8 border-l-4 border-yellow-400 rounded bg-yellow-50">
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <AlertTriangle className="w-5 h-5 text-yellow-400" />
+        <div className='container px-4 py-12 mx-auto'>
+          <div className='max-w-4xl mx-auto overflow-hidden bg-white shadow-sm rounded-xl'>
+            <div className='p-8'>
+              <div className='prose max-w-none'>
+                <div className='p-4 mb-8 border-l-4 border-yellow-400 rounded bg-yellow-50'>
+                  <div className='flex'>
+                    <div className='flex-shrink-0'>
+                      <AlertTriangle className='w-5 h-5 text-yellow-400' />
                     </div>
-                    <div className="ml-3">
-                      <p className="text-sm text-yellow-700">
+                    <div className='ml-3'>
+                      <p className='text-sm text-yellow-700'>
                         <strong>Important Note:</strong> Tramsfarms Marketplace
                         is a platform that connects buyers with independent
                         sellers. All returns and refunds are handled directly by
@@ -71,7 +71,7 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <p className="mb-8 text-gray-600">
+                <p className='mb-8 text-gray-600'>
                   At Tramsfarms Marketplace, we want to ensure a fair and
                   transparent return and refund process for all users. This
                   policy outlines the general guidelines that all sellers on our
@@ -79,19 +79,19 @@ const ReturnPolicyPage = () => {
                   returns and refunds.
                 </p>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Clock className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Clock className='w-5 h-5 mr-2 text-primary' />
                     Return Timeframe
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       All sellers on Tramsfarms Marketplace must accept returns
                       within a minimum of 7 days from the date of delivery. Some
                       sellers may offer extended return periods, which will be
                       clearly indicated on their product listings.
                     </p>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       To be eligible for a return, your request must be
                       initiated within the specified timeframe, and you must
                       have proof of purchase (order confirmation or receipt).
@@ -99,17 +99,17 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <CheckCircle className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <CheckCircle className='w-5 h-5 mr-2 text-primary' />
                     Return Eligibility
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       The following conditions must be met for a return to be
                       eligible:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         The item must be unused, unworn, and in its original
                         condition
@@ -128,10 +128,10 @@ const ReturnPolicyPage = () => {
                       </li>
                     </ul>
 
-                    <h3 className="mb-2 text-xl font-medium text-gray-800">
+                    <h3 className='mb-2 text-xl font-medium text-gray-800'>
                       Valid Reasons for Returns
                     </h3>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>Item received is damaged or defective</li>
                       <li>
                         Item received is significantly different from the
@@ -145,16 +145,16 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <XCircle className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <XCircle className='w-5 h-5 mr-2 text-primary' />
                     Non-Returnable Items
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       The following items are generally not eligible for return:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         Perishable goods (such as food, flowers, or plants)
                       </li>
@@ -171,7 +171,7 @@ const ReturnPolicyPage = () => {
                       </li>
                       <li>Hazardous materials or flammable liquids or gases</li>
                     </ul>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       Sellers may specify additional non-returnable items in
                       their individual policies, which will be clearly indicated
                       on their product listings.
@@ -179,16 +179,16 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <FileText className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <FileText className='w-5 h-5 mr-2 text-primary' />
                     Return Process
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       To initiate a return, please follow these steps:
                     </p>
-                    <ol className="pl-6 mb-6 space-y-4 text-gray-600 list-decimal">
+                    <ol className='pl-6 mb-6 space-y-4 text-gray-600 list-decimal'>
                       <li>
                         <strong>Contact the Seller:</strong> Message the seller
                         directly through our platform to inform them of your
@@ -219,7 +219,7 @@ const ReturnPolicyPage = () => {
                         process your refund according to their refund policy.
                       </li>
                     </ol>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       <strong>Note:</strong> Return shipping costs are typically
                       the responsibility of the buyer, unless the return is due
                       to a seller error (such as sending the wrong item) or the
@@ -228,18 +228,18 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <DollarSign className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <DollarSign className='w-5 h-5 mr-2 text-primary' />
                     Refund Process
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       Once your return is received and inspected by the seller,
                       they will process your refund according to the following
                       guidelines:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         <strong>Full Refunds:</strong> If the item is returned
                         in its original condition and meets all eligibility
@@ -270,16 +270,16 @@ const ReturnPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <AlertTriangle className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <AlertTriangle className='w-5 h-5 mr-2 text-primary' />
                     Damaged or Defective Items
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       If you receive a damaged or defective item:
                     </p>
-                    <ol className="pl-6 mb-6 space-y-2 text-gray-600 list-decimal">
+                    <ol className='pl-6 mb-6 space-y-2 text-gray-600 list-decimal'>
                       <li>
                         Contact the seller within 48 hours of receiving the item
                       </li>
@@ -290,25 +290,25 @@ const ReturnPolicyPage = () => {
                         replacement
                       </li>
                     </ol>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       For damaged or defective items, return shipping costs will
                       typically be covered by the seller.
                     </p>
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <HelpCircle className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <HelpCircle className='w-5 h-5 mr-2 text-primary' />
                     Dispute Resolution
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       If you are unable to resolve a return or refund issue
                       directly with the seller, you can open a dispute through
                       our platform:
                     </p>
-                    <ol className="pl-6 mb-6 space-y-2 text-gray-600 list-decimal">
+                    <ol className='pl-6 mb-6 space-y-2 text-gray-600 list-decimal'>
                       <li>
                         Go to your order history and select the order in
                         question
@@ -326,29 +326,29 @@ const ReturnPolicyPage = () => {
                         policies and the evidence provided
                       </li>
                     </ol>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       Disputes must be opened within 30 days of the delivery
                       date.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 mb-8 rounded-lg bg-gray-50">
-                  <h2 className="mb-4 text-xl font-semibold text-gray-800">
+                <div className='p-6 mb-8 rounded-lg bg-gray-50'>
+                  <h2 className='mb-4 text-xl font-semibold text-gray-800'>
                     Contact Us
                   </h2>
-                  <p className="mb-4 text-gray-600">
+                  <p className='mb-4 text-gray-600'>
                     If you have any questions about our Return and Refund
                     Policy, please contact us:
                   </p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>Email: support@tramsfarms.com</li>
-                    <li>Phone: +1 (555) 123-4567</li>
+                  <ul className='space-y-2 text-gray-600'>
+                    <li>Email: officialtramsfarms@gmail.com</li>
+                    <li>Phone: +234813764153</li>
                     <li>
-                      Contact form:{" "}
+                      Contact form:{' '}
                       <Link
-                        href="/contact-us"
-                        className="text-primary hover:underline"
+                        href='/contact-us'
+                        className='text-primary hover:underline'
                       >
                         Contact Us Page
                       </Link>
@@ -356,7 +356,7 @@ const ReturnPolicyPage = () => {
                   </ul>
                 </div>
 
-                <p className="text-sm italic text-gray-500">
+                <p className='text-sm italic text-gray-500'>
                   This Return and Refund Policy was last updated on March 10,
                   2025 and applies to all purchases made on or after this date.
                 </p>

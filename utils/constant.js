@@ -13,26 +13,25 @@ export const footerSectionSchema = [
   {
     title: 'Need Help',
     links: [
-      { label: 'Chat With Us', href: '/' },
-      { label: 'Help Center', href: '/' },
-      { label: 'Contact Us', href: '/' },
-      { label: 'Blog', href: '/' },
+      { label: 'Chat With Us', href: '/chat' },
+      { label: 'Help Center', href: '/help' },
+      { label: 'Blog', href: '/https://blog.tramsfarms.com/' },
     ],
   },
   {
     title: 'Useful Links',
     links: [
-      { label: 'Report a product', href: '/' },
-      { label: 'Return & Refund Timeline', href: '/' },
-      { label: 'Delivery options & timelines', href: '/' },
+      { label: 'Report a product', href: '/report' },
+      { label: 'Return & Refund Timeline', href: '/refund' },
+      { label: 'Delivery options & timelines', href: '/delivery' },
     ],
   },
   {
     title: 'About Tramsfarms',
     links: [
-      { label: 'About Us', href: '/' },
-      { label: 'Terms and Conditions', href: '/' },
-      { label: 'Privacy Notice', href: '/' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Terms and Conditions', href: '/terms' },
+      { label: 'Privacy Notice', href: '/privacy' },
     ],
   },
   {

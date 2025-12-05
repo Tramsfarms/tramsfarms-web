@@ -19,6 +19,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { productService } from '@/utils/productService';
 import { Product } from '@/types/product';
 import { Skeleton } from '@/components/ui/skeleton';
+import Totopbtn from './toTopBtn';
 
 export default function Home() {
   var settings = {
@@ -220,7 +221,7 @@ export default function Home() {
               Recommended
             </h1>
           </div>
-          <div className='lg:container grid max-w-full lg:-mt-4 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'>
+          <div className='lg:container grid max-w-full lg:-mt-7 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'>
             {isRecommendedLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
@@ -319,7 +320,9 @@ export default function Home() {
           )}
         </div>
       </Suspense>
+
       <Footer />
+      <Totopbtn />
     </div>
   );
 }
