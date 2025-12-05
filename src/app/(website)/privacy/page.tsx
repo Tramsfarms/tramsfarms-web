@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import {
   ChevronRight,
   Shield,
@@ -10,48 +10,48 @@ import {
   Globe,
   Clock,
   AlertTriangle,
-} from "lucide-react";
-import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+} from 'lucide-react';
+import Link from 'next/link';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Tramsfarms Marketplace",
+  title: 'Privacy Policy | Tramsfarms Marketplace',
   description:
-    "Learn how Tramsfarms Marketplace collects, uses, and protects your personal information.",
+    'Learn how Tramsfarms Marketplace collects, uses, and protects your personal information.',
 };
 
 const PrivacyPolicyPage = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen bg-background">
+      <div className='min-h-screen bg-background'>
         {/* Header */}
-        <div className="py-12 bg-primary/10">
-          <div className="container px-4 mx-auto">
-            <div className="flex items-center mb-4 text-sm text-gray-600">
-              <Link href="/" className="transition-colors hover:text-primary">
+        <div className='py-12 bg-primary'>
+          <div className='container px-4 mx-auto'>
+            <div className='flex items-center mb-4 text-sm text-white'>
+              <Link href='/' className='transition-colors hover:text-primary'>
                 Home
               </Link>
-              <ChevronRight className="w-4 h-4 mx-2" />
-              <span className="font-medium text-gray-800">Privacy Policy</span>
+              <ChevronRight className='w-4 h-4 mx-2' />
+              <span className='font-medium text-white'>Privacy Policy</span>
             </div>
-            <h1 className="flex items-center text-4xl font-bold text-gray-900">
-              <Shield className="w-8 h-8 mr-3 text-primary" />
+            <h1 className='flex items-center text-4xl font-bold text-white'>
+              <Shield className='w-8 h-8 mr-3 text-white' />
               Privacy Policy
             </h1>
-            <p className="max-w-3xl mt-4 text-gray-600">
+            <p className='max-w-3xl mt-4 text-white'>
               Last updated: March 10, 2025
             </p>
           </div>
         </div>
 
         {/* Content */}
-        <div className="container px-4 py-12 mx-auto">
-          <div className="max-w-4xl mx-auto overflow-hidden bg-white shadow-sm rounded-xl">
-            <div className="p-8">
-              <div className="prose max-w-none">
-                <p className="mb-8 text-gray-600">
+        <div className='container px-4 py-12 mx-auto'>
+          <div className='max-w-4xl mx-auto overflow-hidden bg-white shadow-sm rounded-xl'>
+            <div className='p-8'>
+              <div className='prose max-w-none'>
+                <p className='mb-8 text-gray-600'>
                   At Tramsfarms Marketplace, we are committed to protecting your
                   privacy and ensuring the security of your personal
                   information. This Privacy Policy explains how we collect, use,
@@ -60,23 +60,23 @@ const PrivacyPolicyPage = () => {
                   practices regarding your personal data.
                 </p>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Eye className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Eye className='w-5 h-5 mr-2 text-primary' />
                     Information We Collect
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <h3 className="mb-2 text-xl font-medium text-gray-800">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <h3 className='mb-2 text-xl font-medium text-gray-800'>
                       Personal Information
                     </h3>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       We collect personal information that you voluntarily
                       provide to us when you register on our platform, express
                       interest in obtaining information about us or our
                       products, or otherwise contact us. This information may
                       include:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         Name, email address, phone number, and other contact
                         details
@@ -90,14 +90,14 @@ const PrivacyPolicyPage = () => {
                       <li>Communication preferences and marketing choices</li>
                     </ul>
 
-                    <h3 className="mb-2 text-xl font-medium text-gray-800">
+                    <h3 className='mb-2 text-xl font-medium text-gray-800'>
                       Automatically Collected Information
                     </h3>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       When you access or use our platform, we automatically
                       collect certain information, including:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         Device information (such as your IP address, browser
                         type, and operating system)
@@ -112,17 +112,17 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Database className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Database className='w-5 h-5 mr-2 text-primary' />
                     How We Use Your Information
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       We use the information we collect for various purposes,
                       including:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         Providing, maintaining, and improving our platform
                       </li>
@@ -150,17 +150,17 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Share2 className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Share2 className='w-5 h-5 mr-2 text-primary' />
                     Information Sharing and Disclosure
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       We may share your information in the following
                       circumstances:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         <strong>With Sellers and Buyers:</strong> To facilitate
                         transactions and communications between users of our
@@ -187,7 +187,7 @@ const PrivacyPolicyPage = () => {
                         we have your explicit consent
                       </li>
                     </ul>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       We do not sell your personal information to third parties
                       for their marketing purposes without your explicit
                       consent.
@@ -195,13 +195,13 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Cookie className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Cookie className='w-5 h-5 mr-2 text-primary' />
                     Cookies and Tracking Technologies
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       We use cookies and similar tracking technologies to
                       collect information about your browsing activities and to
                       remember your preferences. You can control cookies through
@@ -209,10 +209,10 @@ const PrivacyPolicyPage = () => {
                       cookies may limit your ability to use certain features of
                       our platform.
                     </p>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       We use the following types of cookies:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         <strong>Essential Cookies:</strong> Necessary for the
                         operation of our platform
@@ -235,17 +235,17 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <UserCheck className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <UserCheck className='w-5 h-5 mr-2 text-primary' />
                     Your Rights and Choices
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       Depending on your location, you may have certain rights
                       regarding your personal information, including:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         Accessing, correcting, or deleting your personal
                         information
@@ -264,26 +264,26 @@ const PrivacyPolicyPage = () => {
                         Objecting to processing of your personal information
                       </li>
                     </ul>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       To exercise these rights, please contact us using the
                       information provided in the "Contact Us" section below.
                     </p>
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Globe className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Globe className='w-5 h-5 mr-2 text-primary' />
                     International Data Transfers
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       Your information may be transferred to, and processed in,
                       countries other than the country in which you reside.
                       These countries may have data protection laws that are
                       different from the laws of your country.
                     </p>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       When we transfer your information to other countries, we
                       will take appropriate measures to protect your information
                       and ensure that any transfers comply with applicable data
@@ -292,20 +292,20 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <Clock className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <Clock className='w-5 h-5 mr-2 text-primary' />
                     Data Retention
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       We retain your personal information for as long as
                       necessary to fulfill the purposes outlined in this Privacy
                       Policy, unless a longer retention period is required or
                       permitted by law. When determining how long to retain
                       information, we consider:
                     </p>
-                    <ul className="pl-6 mb-6 space-y-2 text-gray-600 list-disc">
+                    <ul className='pl-6 mb-6 space-y-2 text-gray-600 list-disc'>
                       <li>
                         The amount, nature, and sensitivity of the information
                       </li>
@@ -326,20 +326,20 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
-                    <AlertTriangle className="w-5 h-5 mr-2 text-primary" />
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
+                    <AlertTriangle className='w-5 h-5 mr-2 text-primary' />
                     Changes to This Privacy Policy
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       We may update this Privacy Policy from time to time to
                       reflect changes in our practices or for other operational,
                       legal, or regulatory reasons. We will notify you of any
                       material changes by posting the updated Privacy Policy on
                       this page and updating the "Last updated" date.
                     </p>
-                    <p className="mb-4 text-gray-600">
+                    <p className='mb-4 text-gray-600'>
                       We encourage you to review this Privacy Policy
                       periodically to stay informed about how we collect, use,
                       and protect your information.
@@ -347,30 +347,26 @@ const PrivacyPolicyPage = () => {
                   </div>
                 </div>
 
-                <div className="mb-10">
-                  <h2 className="flex items-center mb-4 text-2xl font-semibold text-gray-800">
+                <div className='mb-10'>
+                  <h2 className='flex items-center mb-4 text-2xl font-semibold text-gray-800'>
                     Contact Us
                   </h2>
-                  <div className="border-l-2 border-gray-100 pl-7">
-                    <p className="mb-4 text-gray-600">
+                  <div className='border-l-2 border-gray-100 pl-7'>
+                    <p className='mb-4 text-gray-600'>
                       If you have any questions, concerns, or requests regarding
                       this Privacy Policy or our privacy practices, please
                       contact us at:
                     </p>
-                    <div className="p-4 mb-4 rounded-lg bg-gray-50">
-                      <p className="font-medium text-gray-700">
+                    <div className='p-4 mb-4 rounded-lg bg-gray-50'>
+                      <p className='font-medium text-gray-700'>
                         Tramsfarms Marketplace
                       </p>
-                      <p className="text-gray-600">
-                        Email: privacy@tramsfarms.com
+                      <p className='text-gray-600'>
+                        Email: officialtramsfarms@gmail.com
                       </p>
-                      <p className="text-gray-600">Phone: +1 (555) 123-4567</p>
-                      <p className="text-gray-600">
-                        Address: 123 Market Street, Suite 100, San Francisco, CA
-                        94105
-                      </p>
+                      <p className='text-gray-600'>Phone: +234813764153</p>
                     </div>
-                    <p className="text-gray-600">
+                    <p className='text-gray-600'>
                       We will respond to your request within a reasonable
                       timeframe.
                     </p>
