@@ -14,7 +14,7 @@ export default function Footer() {
   const [acceptTerms, setAcceptTerms] = useState(false);
 
   return (
-    <footer className=''>
+    <footer className='-mt-7'>
       {/* Main Footer */}
       <div className='  bg-[#25252E] lg:p-0 p-5 '>
         <div className='lg:container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-40 py-6 text-white'>
