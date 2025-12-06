@@ -320,8 +320,8 @@ export default function Home() {
           )}
         </div>
       </Suspense>
-      <Totopbtn />
       <Footer />
+      <Totopbtn />
     </div>
   );
 }
