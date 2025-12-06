@@ -215,7 +215,7 @@ export default function Home() {
       <Suspense
         fallback={<div className='p-5'>Loading Recommended products...</div>}
       >
-        <div className=' max-w-full lg:-mt-8  lg:container '>
+        <div className=' max-w-full lg:-mt-8 lg:p-0 p-3 lg:container '>
           <div className='lg:container'>
             <h1 className='text-lg p-4  font-bold text-grays-900 md:text-2xl'>
               Recommended
@@ -320,7 +320,6 @@ export default function Home() {
           )}
         </div>
       </Suspense>
-
       <Footer />
       <Totopbtn />
     </div>
