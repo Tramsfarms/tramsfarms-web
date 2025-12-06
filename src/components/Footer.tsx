@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='lg:container grid lg:grid-cols-4 grid-cols-2 gap-10 lg:p-0 p-5 lg:gap-52 py-6'>
+      <div className='lg:container grid md:grid-cols-4 grid-cols-2 gap-10 lg:p-0 p-5 lg:gap-52 py-6'>
         {footerSectionSchema.map((section) => (
           <div key={section.title} className='space-y-4'>
             <h6 className='lg:text-lg text-[1rem] font-bold text-[#25252E]'>
