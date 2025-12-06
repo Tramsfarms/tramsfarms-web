@@ -14,10 +14,10 @@ export default function Footer() {
   const [acceptTerms, setAcceptTerms] = useState(false);
 
   return (
-    <footer className=''>
+    <footer className='-mt-7'>
       {/* Main Footer */}
-      <div className='  bg-[#25252E] '>
-        <div className='lg:container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-40 py-6 text-white'>
+      <div className='  bg-[#25252E] lg:p-0 p-5 '>
+        <div className='lg:container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-40 py-6 text-white'>
           <div className=''>
             <img
               src='/images/logo/WWt.svg'
@@ -77,10 +77,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='lg:container grid grid-cols-4 gap-52 py-6'>
+      <div className='lg:container grid md:grid-cols-4 grid-cols-2 gap-10 lg:p-0 p-5 lg:gap-52 py-6'>
         {footerSectionSchema.map((section) => (
           <div key={section.title} className='space-y-4'>
-            <h6 className='text-lg font-bold text-[#25252E]'>
+            <h6 className='lg:text-lg text-[1rem] font-bold text-[#25252E]'>
               {section.title}
             </h6>
 
