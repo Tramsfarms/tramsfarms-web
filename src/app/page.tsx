@@ -267,7 +267,7 @@ export default function Home() {
       <Suspense
         fallback={<div className='p-5'>Loading All Categories products...</div>}
       >
-        <div className='max-w-full p-3 lg:-mt-4 lg:p-14'>
+        <div className='max-w-full p-3 md:mb-0 mb-8 lg:-mt-4 lg:p-14'>
           <div className='flex items-center lg:-mt-14 justify-between '>
             <h1 className='text-lg font-bold text-grays-900 md:text-2xl'>
               All Categories
