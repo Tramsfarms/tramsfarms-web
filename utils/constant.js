@@ -1,5 +1,5 @@
 export default {
-  API_URL: 'https://tramsfarms.faithstream.com.ng/api/',
+  API_URL: 'https://api.tramsfarms.com/api/',
   gpass: 'VONshtvrr9tFPQKcMP9O',
   guser: 'ghomes',
 };
@@ -7,6 +7,7 @@ export default {
 //Local = http://localhost:8000/api/
 //Prod = https://api.tramsfarms.com/api/
 //Dev =
+// 'https://tramsfarms.faithstream.com.ng/api/'
 
 // Footer Schema
 export const footerSectionSchema = [
