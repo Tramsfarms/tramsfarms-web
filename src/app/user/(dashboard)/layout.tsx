@@ -79,7 +79,7 @@ export default function UserLayout({
   useEffect(() => {
     const fetchPersonalInfo = async () => {
       try {
-        const token = Cookies.get('buyer_auth_token'); // Get the token from cookies
+        const token = Cookies.get('vendors_auth_token'); // Get the token from cookies
 
         if (!token) {
           throw new Error('User not authenticated');
