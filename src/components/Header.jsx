@@ -117,7 +117,7 @@ export default function Header() {
     };
   }, []);
 
-  const accountLink = userType === "buyer" ? "/user" : "/vendors/profile";
+  const accountLink = userType === "buyer" ? "/user/profile" : "/vendors/profile";
 
   const toggleUserType = () => {
     const newUserType = userType === "buyer" ? "seller" : "buyer";
