@@ -267,12 +267,11 @@ export default function Home() {
       <Suspense
         fallback={<div className='p-5'>Loading All Categories products...</div>}
       >
-        <div className='max-w-full p-3 lg:-mt-4 lg:p-14'>
+        <div className='max-w-full p-3 lg:-mt-4 lg:p-14 md:mb-7'>
           <div className='flex items-center lg:-mt-14 justify-between '>
             <h1 className='text-lg font-bold text-grays-900 md:text-2xl'>
               All Categories
             </h1>
-
             <Link href='/products/all/recommended'>
               <Button className='text-white border-primary' variant='primary'>
                 See all
@@ -284,17 +283,18 @@ export default function Home() {
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
               ))
-            ) : allProducts.length > 0 ? (
+            ) : allProducts.length === 0 ? (
+              <p className='col-span-full text-center text-gray-500'>
+                No products available.
+              </p>
+            ) : (
               allProducts
                 .slice(0, 10)
                 .map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))
-            ) : (
-              <p>No products available.</p>
             )}
           </div>
-
           {allProductsTotalPages > 1 && (
             <div className='flex items-center justify-center mt-8 space-x-4'>
               <Button
