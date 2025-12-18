@@ -13,7 +13,6 @@ export default function page() {
               Account Statements
             </h1>
           </div>
-
           <div>
             <button className="p-2 px-4 font-sans text-xs text-white rounded-lg bg-primary">
               Export Transactions
