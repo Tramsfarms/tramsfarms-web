@@ -25,6 +25,7 @@ import { init, SearchIndex } from "emoji-mart";
 import data from "@emoji-mart/data";
 init({ data });
 import "stream-chat-react/dist/css/v2/index.css";
+import { Button } from "./ui/button";
 
 const { API_URL } = constant;
 
@@ -79,9 +80,10 @@ const ChatComponent = ({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <button>
-          <MessageCircleMore />
-        </button>
+        <Button size='lg' variant={'primary'}>
+           <MessageCircleMore />
+           <p>Send Message</p>
+        </Button>
       </PopoverTrigger>
       <PopoverContent className="flex mt-8 top-full flex-col bg-white shadow-lg w-80 h-96 md:h-[300px]">
         {client ? (
