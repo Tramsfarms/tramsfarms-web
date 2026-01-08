@@ -1,7 +1,12 @@
+"use client"
+
 import Link from "next/link";
+import react,{useState,useEffect} from "react"
 import Image from "next/image";
 import { formatCurrency } from "@/lib/utils";
 import { Star, ShoppingBag } from "lucide-react";
+import axios from 'axios';
+import Cookies from 'js-cookie';
 import {
   Card,
   CardContent,
@@ -10,6 +15,7 @@ import {
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Product } from "@/types/product";
+import constant from '@/utils/constant';
 
 interface ProductCardProps {
   product: Product;
@@ -17,9 +23,34 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, isLoading }: ProductCardProps) {
+
+   const [productSales, setProductSales] = useState([]);
+     const { API_URL } = constant;
   if (isLoading) {
     return <ProductCardSkeleton />;
   }
+//   useEffect(() => {
+//   async function fetchData() {
+//     const token = Cookies.get("vendors_auth_token");
+
+//     const [productsRes, salesRes] = await Promise.all([
+//       axios.get(`${API_URL}vendor/products`, {
+//         headers: { Authorization: `Bearer ${token}` },
+//       }),
+//       axios.get(`${API_URL}admin/dashboard/sales`, {
+//         headers: { Authorization: `Bearer ${token}` },
+//       }),
+//     ]);
+
+//     const products = productsRes.data;
+//     const salesData = salesRes.data;
+
+//     setProductSales(attachSalesToProducts(products, salesData));
+//   }
+
+//   fetchData();
+// }, []);
+  
 
   return (
     <Link
@@ -42,9 +73,12 @@ export function ProductCard({ product, isLoading }: ProductCardProps) {
           <h3 className="mb-2 text-sm font-medium line-clamp-2 sm:text-base">
             {product.name}
           </h3>
-          <div className="flex items-center justify-between">
+          <div className="grid grid-flow-row gap-1 items-center justify-between">
             <p className="text-lg font-semibold text-primary">
               {formatCurrency(parseFloat(product.sale_price))}
+            </p>
+            <p className="text-lg font-semibold text-primary">
+              {/* {product.sales} units sold */}
             </p>
             {/* {product.rating && (
               <div className="flex items-center gap-1 text-yellow-500">

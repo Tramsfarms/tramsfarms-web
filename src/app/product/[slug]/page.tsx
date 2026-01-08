@@ -8,7 +8,6 @@ import axios from 'axios';
 import Image from 'next/image';
 import { ShoppingCart, CheckCircle, XCircle, Plus, Minus } from 'lucide-react';
 import { toast } from 'react-toastify';
-
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Badge } from '@/components/ui/badge';
@@ -183,10 +182,8 @@ export default function ProductPage(props: {
                 )}
               </div>
             </div>
-
-            <Separator />
-
-            <div className='space-y-2'>
+<Separator />
+<div className='space-y-2'>
               <h3 className='text-lg font-semibold'>Description</h3>
               <p className='text-muted-foreground'>{product?.description}</p>
             </div>
@@ -291,11 +288,13 @@ export default function ProductPage(props: {
                   Add to Cart
                 </Button>
 
-                {product?.user?.id && (
-                  <ChatComponent
+                {product?.user?.id && ( 
+                   <ChatComponent
                     chatId={product.user.id}
                     title={product.name}
                   />
+                  
+                  
                 )}
               </div>
             </div>
