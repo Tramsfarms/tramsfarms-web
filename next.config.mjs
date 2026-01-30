@@ -17,6 +17,12 @@ const nextConfig = {
         port: "",
         search: "",
       },
+      {
+        protocol: "http",
+        hostname: "api.tramsfarms.com",
+        port: "",
+        search: "",
+      },
     ],
   },
 };

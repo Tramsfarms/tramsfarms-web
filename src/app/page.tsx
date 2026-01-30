@@ -1,25 +1,25 @@
-'use client';
-import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Carousel from '@/components/Carousel';
-import Link from 'next/link';
-import ProductCard from '../components/ProductCard';
-import ProductsCarousel from '@/components/ProductsCarousel';
+"use client";
+import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Carousel from "@/components/Carousel";
+import Link from "next/link";
+import ProductCard from "../components/ProductCard";
+import ProductsCarousel from "@/components/ProductsCarousel";
 ///import ProductsSection from "@/components/ProductsSection";
-import { useEffect, useState, Suspense } from 'react';
-import { ProductResponse } from '@/@types/AllProducts';
-import axios from 'axios';
-import constants from '../../utils/constant';
-import { toast } from 'react-toastify';
-import Slider from 'react-slick';
-import ProductsLoader from '../components/ProductsLoader';
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { productService } from '@/utils/productService';
-import { Product } from '@/types/product';
-import { Skeleton } from '@/components/ui/skeleton';
-import Totopbtn from './toTopBtn';
+import { useEffect, useState, Suspense } from "react";
+import { ProductResponse } from "@/@types/AllProducts";
+import axios from "axios";
+import constants from "../../utils/constant";
+import { toast } from "react-toastify";
+import Slider from "react-slick";
+import ProductsLoader from "../components/ProductsLoader";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { productService } from "@/utils/productService";
+import { Product } from "@/types/product";
+import { Skeleton } from "@/components/ui/skeleton";
+import Totopbtn from "./toTopBtn";
 
 export default function Home() {
   var settings = {
@@ -31,24 +31,24 @@ export default function Home() {
   };
   const slides = [
     {
-      image: '/carousel/image1.png',
-      text1: 'Buy it Green',
-      text2: 'Buy it Fresh',
+      image: "/carousel/image1.png",
+      text1: "Buy it Green",
+      text2: "Buy it Fresh",
     },
     {
-      image: '/carousel/image2.png',
-      text1: 'Buy it Green',
-      text2: 'Buy it Fresh',
+      image: "/carousel/image2.png",
+      text1: "Buy it Green",
+      text2: "Buy it Fresh",
     },
     {
-      image: '/carousel/image3.png',
-      text1: 'Buy it Green',
-      text2: 'Buy it Fresh',
+      image: "/carousel/image3.png",
+      text1: "Buy it Green",
+      text2: "Buy it Fresh",
     },
     {
-      image: '/carousel/image4.png',
-      text1: 'Buy it Green',
-      text2: 'Buy it Fresh',
+      image: "/carousel/image4.png",
+      text1: "Buy it Green",
+      text2: "Buy it Fresh",
     },
   ];
 
@@ -78,16 +78,16 @@ export default function Home() {
   // Banner data - each page has 2 banners
   const bannerPages = [
     [
-      { src: '/images/banners/banner1.png', alt: 'Banner 1' },
-      { src: '/images/banners/banner2.png', alt: 'Banner 2' },
+      { src: "/images/banners/banner1.png", alt: "Banner 1" },
+      { src: "/images/banners/banner2.png", alt: "Banner 2" },
     ],
     [
-      { src: '/images/banners/banner3.png', alt: 'Banner 3' },
-      { src: '/images/banners/banner4.png', alt: 'Banner 4' },
+      { src: "/images/banners/banner3.png", alt: "Banner 3" },
+      { src: "/images/banners/banner4.png", alt: "Banner 4" },
     ],
     [
-      { src: '/images/banners/banner5.png', alt: 'Banner 5' },
-      { src: '/images/banners/banner6.png', alt: 'Banner 6' },
+      { src: "/images/banners/banner5.png", alt: "Banner 5" },
+      { src: "/images/banners/banner6.png", alt: "Banner 6" },
     ],
   ];
 
@@ -115,7 +115,7 @@ export default function Home() {
       setAllProductsTotalPages(response.last_page || 1);
       setAllProductsPage(page);
     } catch (error) {
-      toast.error('An Error Occurred while trying to fetch data');
+      toast.error("An Error Occurred while trying to fetch data");
     } finally {
       setIsLoading(false);
     }
@@ -128,7 +128,7 @@ export default function Home() {
       setBigSaveProducts(response.data.data);
       setBigSaveTotalPages(response.data.last_page);
     } catch (error) {
-      toast.error('Failed to fetch big save products');
+      toast.error("Failed to fetch big save products");
     } finally {
       setIsBigSaveLoading(false);
     }
@@ -141,7 +141,7 @@ export default function Home() {
       setRecommendedProducts(response.data.data);
       setRecommendedTotalPages(response.data.last_page);
     } catch (error) {
-      toast.error('Failed to fetch recommended products');
+      toast.error("Failed to fetch recommended products");
     } finally {
       setIsRecommendedLoading(false);
     }
@@ -154,7 +154,7 @@ export default function Home() {
       setAllProducts(response.data.data);
       setAllProductsTotalPages(response.data.last_page);
     } catch (error) {
-      toast.error('Failed to fetch all products');
+      toast.error("Failed to fetch all products");
     } finally {
       setIsAllProductsLoading(false);
     }
@@ -179,30 +179,30 @@ export default function Home() {
   };
 
   return (
-    <div className='w-screen h-screen overflow-x-hidden bg-white'>
+    <div className="w-screen h-screen overflow-x-hidden bg-white">
       <Header />
-      <div className='max-w-full  lg:-mt-10 p-3 rounded-lg h-52 sm:h-[400px] lg:p-14'>
+      <div className="max-w-full  lg:-mt-10 p-3 rounded-lg h-52 sm:h-[400px] lg:p-14">
         <Carousel autoSlide={true}>
           {slides.map((slide, index) => (
             <div
               key={index}
-              className='relative w-full h-full overflow-hidden rounded-lg'
+              className="relative w-full h-full overflow-hidden rounded-lg"
             >
               <Image
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
-              <div className='absolute inset-0 flex flex-col justify-center h-full pl-10 text-white bg-black bg-opacity-50 rounded-lg sm:p-4 sm:pl-20'>
-                <h1 className='font-bold sm:text-2xl text-brand-300'>
+              <div className="absolute inset-0 flex flex-col justify-center h-full pl-10 text-white bg-black bg-opacity-50 rounded-lg sm:p-4 sm:pl-20">
+                <h1 className="font-bold sm:text-2xl text-brand-300">
                   {slide.text1}
                 </h1>
-                <h2 className='font-bold text-white sm:text-2xl'>
+                <h2 className="font-bold text-white sm:text-2xl">
                   {slide.text2}
                 </h2>
-                <div className='inline-block sm:mt-4'>
-                  <button className='px-2 text-white border border-white rounded-md sm:py-2 sm:px-4'>
+                <div className="inline-block sm:mt-4">
+                  <button className="px-2 text-white border border-white rounded-md sm:py-2 sm:px-4">
                     Shop Now
                   </button>
                 </div>
@@ -213,22 +213,22 @@ export default function Home() {
       </div>
       {/**Recommended */}
       <Suspense
-        fallback={<div className='p-5'>Loading Recommended products...</div>}
+        fallback={<div className="p-5">Loading Recommended products...</div>}
       >
-        <div className=' max-w-full lg:-mt-8 lg:p-0 p-3 lg:container '>
-          <div className='lg:container'>
-            <h1 className='text-lg p-4  font-bold text-grays-900 md:text-2xl'>
+        <div className=" max-w-full lg:-mt-8 lg:p-0 p-3 lg:container ">
+          <div className="lg:container">
+            <h1 className="text-lg p-4  font-bold text-grays-900 md:text-2xl">
               Recommended
             </h1>
           </div>
-          <div className='lg:container grid max-w-full lg:-mt-7 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5'>
+          <div className="lg:container grid max-w-full lg:-mt-7 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5">
             {isRecommendedLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
               ))
             ) : recommendedProducts.length === 0 ? (
-              <p className='col-span-full text-center text-gray-500'>
-                No products available.
+              <p className="col-span-full text-center text-gray-500">
+                products loading....
               </p>
             ) : (
               recommendedProducts
@@ -239,25 +239,25 @@ export default function Home() {
             )}
           </div>
           {recommendedTotalPages > 1 && (
-            <div className='flex items-center justify-center mt-8 space-x-4'>
+            <div className="flex items-center justify-center mt-8 space-x-4">
               <Button
-                variant='outline'
-                size='icon'
+                variant="outline"
+                size="icon"
                 onClick={() => handleRecommendedPageChange(recommendedPage - 1)}
                 disabled={recommendedPage === 1}
               >
-                <ChevronLeft className='w-4 h-4' />
+                <ChevronLeft className="w-4 h-4" />
               </Button>
-              <span className='text-sm'>
+              <span className="text-sm">
                 Page {recommendedPage} of {recommendedTotalPages}
               </span>
               <Button
-                variant='outline'
-                size='icon'
+                variant="outline"
+                size="icon"
                 onClick={() => handleRecommendedPageChange(recommendedPage + 1)}
                 disabled={recommendedPage === recommendedTotalPages}
               >
-                <ChevronRight className='w-4 h-4' />
+                <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
           )}
@@ -265,27 +265,27 @@ export default function Home() {
       </Suspense>
       {/** All Categories */}
       <Suspense
-        fallback={<div className='p-5'>Loading All Categories products...</div>}
+        fallback={<div className="p-5">Loading All Categories products...</div>}
       >
-        <div className='max-w-full p-3 lg:-mt-4 lg:p-14 md:mb-7'>
-          <div className='flex items-center lg:-mt-14 justify-between '>
-            <h1 className='text-lg font-bold text-grays-900 md:text-2xl'>
+        <div className="max-w-full p-3 lg:-mt-4 lg:p-14 md:mb-7">
+          <div className="flex items-center lg:-mt-14 justify-between ">
+            <h1 className="text-lg font-bold text-grays-900 md:text-2xl">
               All Categories
             </h1>
-            <Link href='/products/all/recommended'>
-              <Button className='text-white border-primary' variant='primary'>
+            <Link href="/products/all/recommended">
+              <Button className="text-white border-primary" variant="primary">
                 See all
               </Button>
             </Link>
           </div>
-          <div className='grid max-w-full grid-cols-2 lg:-mt-4 gap-2 mt-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+          <div className="grid max-w-full grid-cols-2 lg:-mt-4 gap-2 mt-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {isAllProductsLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
               ))
             ) : allProducts.length === 0 ? (
-              <p className='col-span-full text-center text-gray-500'>
-                No products available.
+              <p className="col-span-full text-center text-gray-500">
+                products loading....
               </p>
             ) : (
               allProducts
@@ -296,25 +296,25 @@ export default function Home() {
             )}
           </div>
           {allProductsTotalPages > 1 && (
-            <div className='flex items-center justify-center mt-8 space-x-4'>
+            <div className="flex items-center justify-center mt-8 space-x-4">
               <Button
-                variant='outline'
-                size='icon'
+                variant="outline"
+                size="icon"
                 onClick={() => handleAllProductsPageChange(allProductsPage - 1)}
                 disabled={allProductsPage === 1}
               >
-                <ChevronLeft className='w-4 h-4' />
+                <ChevronLeft className="w-4 h-4" />
               </Button>
-              <span className='text-sm'>
+              <span className="text-sm">
                 Page {allProductsPage} of {allProductsTotalPages}
               </span>
               <Button
-                variant='outline'
-                size='icon'
+                variant="outline"
+                size="icon"
                 onClick={() => handleAllProductsPageChange(allProductsPage + 1)}
                 disabled={allProductsPage === allProductsTotalPages}
               >
-                <ChevronRight className='w-4 h-4' />
+                <ChevronRight className="w-4 h-4" />
               </Button>
             </div>
           )}
