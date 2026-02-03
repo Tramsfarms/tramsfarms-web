@@ -20,6 +20,7 @@ import { productService } from "@/utils/productService";
 import { Product } from "@/types/product";
 import { Skeleton } from "@/components/ui/skeleton";
 import Totopbtn from "./toTopBtn";
+import SkeletonLoader from "@/components/ui/page-loader";
 
 export default function Home() {
   var settings = {
@@ -222,13 +223,13 @@ export default function Home() {
             </h1>
           </div>
           <div className="lg:container grid max-w-full lg:-mt-7 grid-cols-2 gap-2 lg:p-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5">
-            {isRecommendedLoading ? (
-              Array.from({ length: 10 }).map((_, index) => (
-                <ProductsLoader key={index} />
+            {isLoading || isRecommendedLoading ? (
+              Array.from({ length: 10 }).map((_, i) => (
+                <ProductsLoader key={i} />
               ))
             ) : recommendedProducts.length === 0 ? (
               <p className="col-span-full text-center text-gray-500">
-                products loading....
+                No recommended products found
               </p>
             ) : (
               recommendedProducts
@@ -279,13 +280,13 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid max-w-full grid-cols-2 lg:-mt-4 gap-2 mt-10 sm:gap-4 lg:gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {isAllProductsLoading ? (
+            {isLoading || isAllProductsLoading ? (
               Array.from({ length: 10 }).map((_, index) => (
                 <ProductsLoader key={index} />
               ))
             ) : allProducts.length === 0 ? (
               <p className="col-span-full text-center text-gray-500">
-                products loading....
+                No products found
               </p>
             ) : (
               allProducts
